@@ -18,7 +18,7 @@
             <th></th>
         </tr>
         
-        @foreach (PhuHuynh i in Model)
+        @foreach (var i in Model)
         {
             <tr>
                 <td>@i.MaSoPhuHuynh</td>
@@ -27,9 +27,11 @@
                 <td>@i.QuanHe</td>
                 <td>@i.DiaChi</td>
                 <td>
-                    <form action="">
-                        <a class="btn btn-primary text-light">Sửa</a>
-                        <button class="btn btn-danger">Xóa</button>
+                    <form method="post" asp-action="Xoa">
+                        <input type="hidden" value="@i.MaSoPhuHuynh" name="MaPhuHuynh">
+                        <a class="btn btn-primary text-light" asp-route-MaPhuHuynh="@i.MaSoPhuHuynh"
+                           asp-action="Sua">Sửa</a>
+                        <button type="submit" class="btn btn-danger">Xóa</button>
                     </form>
                 </td>
             </tr>

@@ -1,19 +1,29 @@
-﻿@page
-@model BTL_Tu.Views.PhuHuynh.Sua
-
+﻿@model BTL_Tu.Models.PhuHuynh
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
-</div>
-</body>
-</html>
+<a class="btn btn-primary m-1 p-1 text-light">Tạo mới phụ huynh</a>
+<form method="post" asp-action="Sua" asp-controller="PhuHuynh">
+    <input type="hidden" value="@Model.MaSoPhuHuynh" asp-for="MaSoPhuHuynh">
+    <div class="form-group">
+        <label>Tên:</label>
+        <input type="text" value="@Model.Ten"
+               class="form-control" asp-for="Ten" placeholder="Nhập tên phụ huynh">
+    </div>
+    <div class="form-group">
+        <label >Địa chỉ:</label>
+        <input type="text" class="form-control" value="@Model.DiaChi"
+               name="DiaChi" placeholder="Nhập địa chỉ">
+    </div>
+    <div class="form-group">
+        <label >Quan hệ:</label>
+        <input type="text" class="form-control" value="@Model.QuanHe"
+               name="QuanHe" placeholder="Quan hệ với học sinh">
+    </div>
+    <div class="form-group">
+        <label >Số điện thoại</label>
+        <input type="text" class="form-control" @Model.SoDienThoai
+               name="SoDienThoai" placeholder="Số điện thoại">
+    </div>
+    <button type="submit" class="btn btn-primary">Sửa</button>
+</form>

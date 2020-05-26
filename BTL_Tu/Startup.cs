@@ -37,7 +37,11 @@ namespace BTL_Tu
             app.UseStatusCodePages();
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes => 
+                routes.MapRoute(
+                name:"default",
+                template:"{controller=PhuHuynh}/{action=TrangChu}/{MaPhuHuynh?}")
+            );
         }
     }
 }
