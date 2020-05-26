@@ -1,0 +1,38 @@
+﻿@using BTL_Tu.Models
+@model List<BTL_Tu.Models.PhuHuynh>
+@{
+    Layout = "_Layout";
+}
+<div class="row">
+    <a class="btn btn-primary text-light m-1 p-1">Danh sách phụ huynh</a>
+</div>
+
+<div class="container">
+    <table class="table table-sm table-striped table-bordered">
+        <tr>
+            <th>Mã phụ huynh</th>
+            <th>Tên phụ huynh</th>
+            <th>Số điện thoại</th>
+            <th>Quan hệ</th>
+            <th>Địa chỉ</th>
+            <th></th>
+        </tr>
+        
+        @foreach (PhuHuynh i in Model)
+        {
+            <tr>
+                <td>@i.MaSoPhuHuynh</td>
+                <td>@i.Ten</td>
+                <td>@i.SoDienThoai</td>
+                <td>@i.QuanHe</td>
+                <td>@i.DiaChi</td>
+                <td>
+                    <form action="">
+                        <a class="btn btn-primary text-light">Sửa</a>
+                        <button class="btn btn-danger">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

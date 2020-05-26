@@ -26,6 +26,7 @@ namespace BTL_Tu
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddTransient<ApplicationDbContext,ApplicationDbContext>();
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
                 Configuration["ConnectionStrings:QuanLyHocSinh"]));
         }

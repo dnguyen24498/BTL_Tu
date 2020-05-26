@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BTL_Tu.Views.Home
+namespace BTL_Tu.Views.PhuHuynh
 {
-    public class Index : PageModel
+    public class TrangChu : PageModel
     {
         public void OnGet()
         {
